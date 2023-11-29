@@ -1,0 +1,57 @@
+<form class="elementor-form" method="post" name="Get In Touch" id="submit_to_omh_app">
+    <input type="hidden" name="post_id" value="4908"/>
+    <input type="hidden" name="form_id" value="e376ec2"/>
+    <input type="hidden" name="referer_title" value="" />
+    <input type="hidden" name="queried_id" value="4358"/>
+    <div class="elementor-form-fields-wrapper elementor-labels-">
+          <div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-100 elementor-field-required">
+            <label for="form-field-name" class="elementor-field-label elementor-screen-only">Name</label>
+            <input size="1" type="text" name="form_fields[name]" id="form-field-name" class="elementor-field elementor-size-xs  elementor-field-textual" placeholder="Name" required="required" aria-required="true">
+          </div>
+          <div class="elementor-field-type-tel elementor-field-group elementor-column elementor-field-group-field_c045127 elementor-col-100 elementor-field-required">
+            <label for="form-field-field_c045127" class="elementor-field-label elementor-screen-only">Mobile</label>
+            <input size="1" type="tel" name="form_fields[field_c045127]" id="form-field-field_c045127" class="elementor-field elementor-size-xs  elementor-field-textual" placeholder="Mobile" required="required" aria-required="true" pattern="[0-9()#&amp;+*-=.]+" title="Only numbers and phone characters (#, -, *, etc) are accepted.">
+          </div>
+          <div class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-100 elementor-field-required">
+            <label for="form-field-email" class="elementor-field-label elementor-screen-only">Email</label>
+            <input size="1" type="email" name="form_fields[email]" id="form-field-email" class="elementor-field elementor-size-xs  elementor-field-textual" placeholder="Email" required="required" aria-required="true">
+          </div>
+          <div class="elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-field_16ad61e elementor-col-100 elementor-field-required">
+            <label for="form-field-field_16ad61e" class="elementor-field-label elementor-screen-only">Message</label>
+            <textarea class="elementor-field-textual elementor-field  elementor-size-xs" name="form_fields[field_16ad61e]" id="form-field-field_16ad61e" rows="3" placeholder="Message" required="required" aria-required="true"></textarea>				</div>
+          <div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
+            <button type="submit" class="elementor-button elementor-size-xs">
+                <span >
+                    <span class=" elementor-button-icon"></span>
+                    <span class="elementor-button-text">SUBMIT</span>
+                </span>
+            </button>
+          </div>
+      </div>
+	</form>
+
+  <script>
+    document.getElementById('submit_to_omh_app').addEventListener('submit', function(event) {
+    // Prevent the default form submission
+    event.preventDefault();
+
+    // CHUCK YOUR VALIDATION HERE
+
+    // Send a POST request to a different location
+    const formData = new FormData(this);
+    fetch('http://localhost:8000/opportunityprop_contact_form', {// Actual URL will be different
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Handle the response from the alternate endpoint
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+    // Continue with the normal form submission
+    this.submit();
+});
+  </script>
