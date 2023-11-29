@@ -13,7 +13,7 @@
         <img
           class="header_img1"
           src="~assets/CurrentInvestmentNew.png"
-          style="width: 100%; height: 20%"
+          style="width: 100%; hheight: auto"
         />
       </div>
 
@@ -27,7 +27,7 @@
           style="width: 100vw; border: none; box-shadow: none; margin: 0px; padding: 0px"
           dark
         >
-          <q-img src="~assets/OPC-Header.jpg" style="height: 80%" />
+          <q-img src="~assets/OPC-Header.jpg" style="width: 100%; height: auto" />
           <q-card-section class="q-pt-none">
             <div class="text-center">Please fill in your details below:</div>
           </q-card-section>
@@ -137,7 +137,7 @@
             </div> -->
             <div class="q-gutter-sm questions">
               <span style="margin-top: 10px"
-                >3. Do you have a minimum of R100 000 to invest?</span
+                >Do you have a minimum of R100 000 to invest?</span
               >
               <div>
                 <q-radio dark v-model="min_value" val="Yes" label="Yes" color="white" />
@@ -150,7 +150,7 @@
               outlined
               v-model="investment_amount"
               :options="options"
-              label="5.	How much would you like to invest?"
+              label="How much would you like to invest?"
               style="margin: 5px"
             />
           </q-card-section>
@@ -207,11 +207,11 @@ const open = () => {
   card.value = true;
 };
 
-const name = ref("Wayne");
-const surname = ref("Bruton");
-const email = ref("waynebruton@icloud.com");
-const contact = ref("0740628742");
-const investment_amount = ref("R0");
+const name = ref("");
+const surname = ref("");
+const email = ref("");
+const contact = ref("");
+const investment_amount = ref("");
 // const growth = ref("No");
 // const escalating = ref("No");
 // const both = ref("No");
@@ -235,13 +235,30 @@ const reset = () => {
   investment_choice.value = "";
   // growth.value = "";
   // escalating.value = "";
-  min_value.value = "";
+  min_value.value = "No";
   // both.value = "No";
 };
 
 // const sales_people = ref(["Morne", "Minette", "Yvette"]);
 
 const submit = async () => {
+  if (
+    name.value === "" ||
+    surname.value === "" ||
+    email.value === "" ||
+    contact.value === "" ||
+    investment_amount.value === "" ||
+    investment_choice.value === ""
+  ) {
+    $q.notify({
+      message: "Please fill in all the fields",
+      color: "red",
+      position: "center",
+      icon: "warning",
+      timeout: 2000,
+    });
+    return;
+  }
   $q.loading.show({
     spinner: QSpinnerClock,
     spinnerSize: 100,
@@ -278,6 +295,7 @@ const submit = async () => {
         icon: "check",
         timeout: 2000,
       });
+      reset();
       // card.value = false;
     })
     // .then(() => {
@@ -318,7 +336,7 @@ body {
 }
 
 .sticky-bottom {
-  /* position: fixed; */
+  position: fixed;
   bottom: 0;
   width: 100%;
 
