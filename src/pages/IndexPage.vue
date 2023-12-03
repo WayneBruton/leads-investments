@@ -247,7 +247,7 @@ const submit = async () => {
     surname.value === "" ||
     email.value === "" ||
     contact.value === "" ||
-    investment_amount.value === "" ||
+    // investment_amount.value === "" ||
     investment_choice.value === ""
   ) {
     $q.notify({
