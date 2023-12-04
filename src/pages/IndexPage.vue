@@ -5,20 +5,41 @@
         <img
           class="header_img1"
           src="~assets/OPC-Header.jpg"
-          style="width: 100%; height: auto"
+          style="width: 60%; height: auto"
         />
       </div>
 
       <div class="test" style="display: flex; justify-content: center; opacity: 0.9">
         <img
           class="header_img1"
-          src="~assets/CurrentInvestmentNew.png"
-          style="width: 100%; hheight: auto"
+          src="~assets/CurrentInvestment.jpg"
+          style="width: 60%; height: 100"
         />
       </div>
+      <!-- <div class="test" style="display: flex; justify-content: center; opacity: 0.9">
+        <img
+          class="header_img1"
+          src="~assets/CurrentInvestmentNew.png"
+          style="width: 60%; hheight: auto"
+        />
+      </div> -->
+      <!-- <div class="test" style="display: flex; justify-content: center; opacity: 0.9">
+        <img
+          class="header_img1"
+          src="~assets/CurrentInvestmentNew.png"
+          style="width: 60%; hheight: auto"
+        />
+      </div>
+      <div class="test" style="display: flex; justify-content: center; opacity: 0.9">
+        <img
+          class="header_img1"
+          src="~assets/CurrentInvestmentNew.png"
+          style="width: 60%; hheight: auto"
+        />
+      </div> -->
 
       <div class="sticky-bottom">
-        <img src="~assets/OPC-Footer.jpg" style="width: 100%; height: 10%" />
+        <img src="~assets/OPC-Footer.jpg" style="width: 60%; height: 10%" />
       </div>
 
       <q-dialog v-model="card" persistent>
@@ -27,7 +48,9 @@
           style="width: 100vw; border: none; box-shadow: none; margin: 0px; padding: 0px"
           dark
         >
-          <q-img src="~assets/OPC-Header.jpg" style="width: 100%; height: auto" />
+          <div style="display: flex; justify-content: center">
+            <q-img src="~assets/OPC-Header.jpg" style="height: 100%" />
+          </div>
           <q-card-section class="q-pt-none">
             <div class="text-center">Please fill in your details below:</div>
           </q-card-section>
@@ -289,14 +312,16 @@ const submit = async () => {
       let consultant = response.data.consultant;
       $q.loading.hide();
       $q.notify({
-        message: `Thank you for your interest in our development! ${consultant} will be in contact with you shortly.`,
+        message: `Thank you for your interest in our development! One of our will be in contact with you shortly.`,
         color: "green",
         position: "center",
         icon: "check",
         timeout: 2000,
       });
+
       reset();
-      // card.value = false;
+
+      card.value = false;
     })
     // .then(() => {
     //   router.back();
