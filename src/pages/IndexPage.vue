@@ -312,7 +312,7 @@ const submit = async () => {
       let consultant = response.data.consultant;
       $q.loading.hide();
       $q.notify({
-        message: `Thank you for your interest in our development! One of our will be in contact with you shortly.`,
+        message: `Thank you for your interest. An investment consultant will contact you shortly.`,
         color: "green",
         position: "center",
         icon: "check",
@@ -361,8 +361,8 @@ body {
 }
 
 .sticky-bottom {
-  position: fixed;
-  bottom: 0;
+  /* position: fixed;
+  bottom: 0; */
   width: 100%;
 
   /* Add your desired background color */
