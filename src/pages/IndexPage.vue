@@ -2,44 +2,24 @@
   <div class="container">
     <q-page class="test" style="display: flex; flex-direction: column">
       <div class="test" style="display: flex; justify-content: center; opacity: 0.9">
+        <!-- src="~assets/OPC-Header.jpg" -->
         <img
           class="header_img1"
-          src="~assets/OPC-Header.jpg"
-          style="width: 60%; height: auto"
+          src="~assets/OPC-1.jpg"
+          style="width: 75%; height: auto"
         />
       </div>
 
-      <div class="test" style="display: flex; justify-content: center; opacity: 0.9">
+      <!-- <div class="test" style="display: flex; justify-content: center; opacity: 0.9">
         <img
           class="header_img1"
           src="~assets/CurrentInvestment.jpg"
           style="width: 60%; height: 100"
         />
-      </div>
-      <!-- <div class="test" style="display: flex; justify-content: center; opacity: 0.9">
-        <img
-          class="header_img1"
-          src="~assets/CurrentInvestmentNew.png"
-          style="width: 60%; hheight: auto"
-        />
-      </div> -->
-      <!-- <div class="test" style="display: flex; justify-content: center; opacity: 0.9">
-        <img
-          class="header_img1"
-          src="~assets/CurrentInvestmentNew.png"
-          style="width: 60%; hheight: auto"
-        />
-      </div>
-      <div class="test" style="display: flex; justify-content: center; opacity: 0.9">
-        <img
-          class="header_img1"
-          src="~assets/CurrentInvestmentNew.png"
-          style="width: 60%; hheight: auto"
-        />
       </div> -->
 
       <div class="sticky-bottom">
-        <img src="~assets/OPC-Footer.jpg" style="width: 60%; height: 10%" />
+        <img src="~assets/OPC-Footer.jpg" style="width: 75%; height: auto%" />
       </div>
 
       <q-dialog v-model="card" persistent>
@@ -312,7 +292,7 @@ const submit = async () => {
       let consultant = response.data.consultant;
       $q.loading.hide();
       $q.notify({
-        message: `Thank you for your interest. An investment consultant will contact you shortly.`,
+        message: `Thank you for your enquiry. We will be in contact with you shortly.`,
         color: "green",
         position: "center",
         icon: "check",
@@ -350,6 +330,7 @@ open();
 <style scoped>
 .test {
   background-color: #1e1f1f;
+  /* background-color: #424243; */
   /* margin: 0;
   padding: 0; */
 }
