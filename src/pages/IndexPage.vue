@@ -189,6 +189,29 @@ if (process.env.DEV) {
   url.value = "https://omh-python.herokuapp.com";
 }
 
+// onMounted(() => {
+//   // Facebook Pixel script
+//   !(function (f, b, e, v, n, t, s) {
+//     if (f.fbq) return;
+//     n = f.fbq = function () {
+//       n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+//     };
+//     if (!f._fbq) f._fbq = n;
+//     n.push = n;
+//     n.loaded = !0;
+//     n.version = "2.0";
+//     n.queue = [];
+//     t = b.createElement(e);
+//     t.async = !0;
+//     t.src = v;
+//     s = b.getElementsByTagName(e)[0];
+//     s.parentNode.insertBefore(t, s);
+//   })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+//   fbq("init", "1433806687398157");
+//   fbq("track", "PageView");
+//   console.log("Facebook Pixel script loaded");
+// });
+
 const options = ["R100 000", "R100 001 - R500 000", "R500 000 +"];
 
 const investment_choices = ["Capital Investment", "Income and Growth Investment"];
